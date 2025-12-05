@@ -82,7 +82,7 @@ def most_long():
 def info_str():
     answer = input(" 1) Подсчитать кол-во символов в вашем предложение!\n 2) Перевернуть ваше предолжние на оборот \n 3) Посчитать кол-во гласных и согласных букв \n 4) Убрать из вашего предложения специальыне символы \n 5) Найти самое длинное слово в вашем предложение \n 6) для выхода \n Выберите услугу: ")
     if not answer.isdigit():
-        print("Сыбался, только цифры давай")
+        print("Только цифры давай")
         return
     if answer == "1":
         count_simvol()
@@ -101,7 +101,7 @@ def info_str():
 def del_elem():
     numbers = input("Введите числа: ")
     if not numbers.isdigit():
-        print("Сыбался, только цифры давай")
+        print("Только цифры давай")
         return
     list_of_numbers = []
 
@@ -121,7 +121,7 @@ def del_elem():
 def max_min_sum():
     numbers = input("Введите числа: ")
     if not numbers.isdigit():
-        print("Сыбался, только цифры давай")
+        print("Только цифры давай")
         return
     list_of_elem = []
 
@@ -135,14 +135,14 @@ def max_min_sum():
 
 
 
-def sdvig():
+def shift():
     numbers = input("Введите числа: ")
     if not numbers.isdigit():
-        print("Сыбался, только цифры давай")
+        print("Только цифры давай")
         return
     tern = input("Введите число сдвига: ")
     if not numbers.isdigit():
-        print("Сыбался, только цифры давай")
+        print("Только цифры давай")
         return
     list_of_num = []
 
@@ -192,14 +192,14 @@ def temperature():
 def info_list():
     answer = input(" 1) Удалить повторяющиеся элементы\n 2) Найти максимальный, минимальный элементы и сумму всех элементов \n 3) Сдвинуть список \n 4) Найти чётные / нечётные цифры \n 5) Найти среднюю температуру за неделю \n 6) для выхода \n Выберите услугу: ")
     if not answer.isdigit():
-        print("Сыбался, только цифры давай")
+        print("Только цифры давай")
         return
     if answer == "1":
         del_elem()
     elif answer == "2":
         max_min_sum()
     elif answer == "3":
-        sdvig()
+        shift()
     elif answer == "4":
         even_odd_count()
     elif answer == "5":
@@ -214,7 +214,7 @@ def main_menu():
     print("Выберите какой раздел вам надо:")
     answer = input("1) Работа со строками \n2) Работа со списками \n Введите числа: ")
     if not answer.isdigit():
-        print("Сыбался, только цифры давай")
+        print("Только цифры давай")
         return
     if answer == "1":
         info_str()
