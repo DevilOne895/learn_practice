@@ -1,3 +1,5 @@
+import time
+
 from .dict_practice import dict
 from .string_lessons import string_practice
 from .lists_lessons import list_practice
@@ -5,7 +7,7 @@ from .lists_lessons import list_practice
 def main():
     print("ДОБРО ПОЖАЛОВАТЬ В Eugene_INC, ВОТ СПИСОК УСЛУГ КОТОРЫЕ МЫ ПРЕДОСТОВЛЯЕМ:")
     print("Выберите какой раздел вам надо:")
-    answer = input("1) Работа со строками \n2) Работа со списками \n Введите числа: ")
+    answer = input("1) Работа со строками \n2) Работа со списками \n3) выход из программы \n Введите числа: ")
     if not answer.isdigit():
         print("Только цифры давай")
         return
@@ -13,9 +15,8 @@ def main():
         info_str()
     elif answer == "2":
         info_list()
-    else:
-        pass
-
+    elif answer == "3":
+        exit()
 
 
 def info_str():
@@ -34,7 +35,7 @@ def info_str():
     elif answer == "5":
         string_practice.most_long()
     elif answer == "6":
-        exit()
+        main()
 
 
 def info_list():
@@ -53,9 +54,11 @@ def info_list():
     elif answer == "5":
         list_practice.temperature()
     elif answer == "6":
-        exit()
+        main()
 
 
 
 if __name__ == "__main__":
-    main()
+    while True:
+        time.sleep(1)
+        main()
