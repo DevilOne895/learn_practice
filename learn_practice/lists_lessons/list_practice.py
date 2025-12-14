@@ -35,14 +35,14 @@ def max_min_sum():
 
 
 
-def sdvig():
+def shift():
     numbers = input("Введите числа: ")
     if not numbers.isdigit():
-        print("Сыбался, только цифры давай")
+        print("Только цифры давай")
         return
     tern = input("Введите число сдвига: ")
     if not numbers.isdigit():
-        print("Сыбался, только цифры давай")
+        print("Только цифры давай")
         return
     list_of_num = []
 
@@ -87,26 +87,3 @@ def temperature():
     print("Средняя температура:", average_temp)
 
 
-
-
-def info_list():
-    print("ДОБРО ПОЖАЛОВАТЬ В Eugene_INC, ВОТ СПИСОК УСЛУГ КОТОРЫЕ МЫ ПРЕДОСТОВЛЯЕМ:")
-    answer = input(" 1) Удалить повторяющиеся элементы\n 2) Найти масимальный,минимальный елементы и сумму всех елементов \n 3) Сдвинуть список \n 4) Найти чётные / нечётные цифры \n 5) Найти среднюю температуру за неделю \n 6) для выхода \n Выберите услугу: ")
-    if not answer.isdigit():
-        print("Сыбался, только цифры давай")
-        return
-    if answer == "1":
-        count_simvol()
-    elif answer == "2":
-        revers_stroki()
-    elif answer == "3":
-        count_letters()
-    elif answer == "4":
-        cansel()
-    elif answer == "5":
-        most_long()
-    elif answer == "6":
-        exit()
-
-while True:
-    info_list()

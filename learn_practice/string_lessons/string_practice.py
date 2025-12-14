@@ -77,26 +77,3 @@ def most_long():
 
     print(f"Самое длинное слово: '{longest_word}', длина: {len(longest_word)}")
 
-
-
-def info_str():
-    print("ДОБРО ПОЖАЛОВАТЬ В Eugene_INC, ВОТ СПИСОК УСЛУГ КОТОРЫЕ МЫ ПРЕДОСТОВЛЯЕМ:")
-    answer = input(" 1) Подсчитать кол-во символов в вашем предложение!\n 2) Перевернуть ваше предолжние на оборот \n 3) Посчитать кол-во гласных и согласных букв \n 4) Убрать из вашего предложения специальыне символы \n 5) Найти самое длинное слово в вашем предложение \n 6) для выхода \n Выберите услугу: ")
-    if not answer.isdigit():
-        print("Сыбался, только цифры давай")
-        return
-    if answer == "1":
-        count_simvol()
-    elif answer == "2":
-        revers_stroki()
-    elif answer == "3":
-        count_letters()
-    elif answer == "4":
-        cansel()
-    elif answer == "5":
-        most_long()
-    elif answer == "6":
-        exit()
-
-while True:
-    info_str()
