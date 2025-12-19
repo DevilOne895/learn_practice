@@ -1,7 +1,7 @@
 def del_elem():
     numbers = input("Введите числа: ")
     if not numbers.isdigit():
-        print("Сыбался, только цифры давай")
+        print("Только цифры давай")
         return
     list_of_numbers = []
 
@@ -21,7 +21,7 @@ def del_elem():
 def max_min_sum():
     numbers = input("Введите числа: ")
     if not numbers.isdigit():
-        print("Сыбался, только цифры давай")
+        print("Только цифры давай")
         return
     list_of_elem = []
 
@@ -30,8 +30,8 @@ def max_min_sum():
         list_of_elem.append(digit)
         n = sorted(list_of_elem)
 
-    print(f"Самый маленький елемент: {n[0]} \nСамый большой елемент {n[-1]} ")
-    print(f"Сумма всех елементов: ", sum(n))
+    print(f"\n Самый маленький елемент: {n[0]} \nСамый большой елемент {n[-1]} ")
+    print(f"\n Сумма всех елементов: ", sum(n))
 
 
 
@@ -59,7 +59,7 @@ def even_odd_count():
     n = int(input("Введите числа: "))
     n = str(n)
     if not n.isdigit():
-        print("Сыбался, только цифры давай")
+        print("Только цифры давай")
         return
     even = 0
     odd = 0
@@ -68,7 +68,7 @@ def even_odd_count():
             odd += 1
         else:
             even += 1
-    print (f" Четные числа {odd},Не четыне числа {even}")
+    print (f" \n Четные числа {odd},Не четыне числа {even}")
 
 
 
@@ -78,7 +78,7 @@ def temperature():
     days = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"]
 
     for i in range(len(days)):
-        print(f"{days[i]}: {temperatures[i]}°C")
+        print(f"\n {days[i]}: {temperatures[i]}°C")
 
     max_temp = max(temperatures)
     print("Максимальная температура:", days[i], max_temp)
