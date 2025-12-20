@@ -1,6 +1,12 @@
-def count_words():
+LINE = "═" * 70
 
-    print("____________________________________________________________________________________")
+def print_header(title):
+    print("\n" + LINE)
+    print(title.center(70))
+    print(LINE)
+
+def count_words():
+    print_header("ПОДСЧЕТ СЛОВ В ТЕКСТЕ")
     text = input("Введите ваш текст: ")
 
     symbols_to_remove = ".,!?:;-"
@@ -13,11 +19,11 @@ def count_words():
     for word in words:
         word_counts[word] = word_counts.get(word, 0) + 1
 
-    print("____________________________________________________________________________________")
-    print("Результат подсчета:")
+    print_header("РЕЗУЛЬТАТ")
     for word, count in word_counts.items():
         print(f"{word}: {count}")
-    print("____________________________________________________________________________________")
+    print(LINE)
+
 
 def phone_book():
     contacts = {
@@ -28,25 +34,26 @@ def phone_book():
         "Лера": "0954433221"
     }
 
-    print("____________________________________________________________________________________")
-    print("Добро пожаловать в ТЕЛЕФОННЫЙ СПРАВОЧНИК!")
+    print_header("ТЕЛЕФОННЫЙ СПРАВОЧНИК")
     info = input("Что хотите сделать? (добавить/удалить/поиск): ").lower()
 
     if info == "добавить":
         while True:
-            name = input("Введите имя контакта: ")
-            if name == "Стоп":
+            name = input("Введите имя контакта (или 'Стоп' для выхода): ")
+            if name.lower() == "стоп":
                 break
 
-            numb = input("Введите номер контакта: ")
-            if numb == "Стоп":
+            numb = input("Введите номер контакта (или 'Стоп' для выхода): ")
+            if numb.lower() == "стоп":
                 break
 
             contacts[name] = numb
+            print_header("КОНТАКТ ДОБАВЛЕН")
             print(f"Контакт {name} добавлен.")
             print("Текущий список контактов:", contacts)
 
-    if info == "удалить":
+    elif info == "удалить":
+        print_header("УДАЛЕНИЕ КОНТАКТА")
         print("Текущий список контактов:", contacts)
         delcontacts = input("Введите имя контакта для удаления: ")
         if delcontacts in contacts:
@@ -57,16 +64,15 @@ def phone_book():
             print("Такого контакта нет.")
             print("Текущий список контактов:", contacts)
 
-    if info == "поиск":
+    elif info == "поиск":
         search = input("Введите имя контакта: ")
+        print_header("ПОИСК КОНТАКТА")
         if search in contacts:
-            print("____________________________________________________________________________________")
             print("Вот ваш контакт:", contacts[search])
-            print("____________________________________________________________________________________")
         else:
-            print("____________________________________________________________________________________")
             print("Контакт не найден.")
-            print("____________________________________________________________________________________")
+        print(LINE)
+
 
 
 def dictionaru():
@@ -79,9 +85,10 @@ def dictionaru():
             result[value] = []
         result[value].append(key)
 
-    print("____________________________________________________________________________________")
+    print_header("ИНВЕРТИРОВАНИЕ СЛОВАРЯ")
     print(result)
-    print("____________________________________________________________________________________")
+    print(LINE)
+
 
 
 def store():
@@ -89,9 +96,10 @@ def store():
     store2 = {"apple": 25, "orange": 40}
 
     fruits = ["apple", "banana", "orange"]
-    values = []
 
+    print_header("МИНИМАЛЬНАЯ ЦЕНА НА ФРУКТЫ")
     for fruit in fruits:
+        values = []
         if fruit in store1:
             values.append(store1[fruit])
         if fruit in store2:
@@ -99,6 +107,8 @@ def store():
 
         if values:
             print(f"{fruit}: {min(values)}")
+    print(LINE)
+
 
 
 

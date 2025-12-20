@@ -181,7 +181,9 @@ def info_dict():
 
 def info_file():
     while True:
-        header("РАБОТА С ФАЙЛАМИ")
+        print("\n" + "═" * 70)
+        print("РАБОТА С ФАЙЛАМИ".center(70))
+        print("═" * 70)
 
         answer = input(
             " 1) Прочитать файл\n"
@@ -203,24 +205,24 @@ def info_file():
             continue
 
         if answer == "1":
-            time_lessons.open_file()
+            file_lessons.open_file()
         elif answer == "2":
-            time_lessons.count_lines()
+            file_lessons.count_lines()
         elif answer == "3":
-            time_lessons.count_words()
+            file_lessons.count_words()
         elif answer == "4":
-            time_lessons.longest_words()
+            file_lessons.longest_words()
         elif answer == "5":
-            time_lessons.copy_file()
+            file_lessons.copy_file()
         elif answer == "6":
-            time_lessons.print_on_file()
+            file_lessons.print_on_file()
         elif answer == "7":
-            time_lessons.add_numbers()
+            file_lessons.add_numbers()
         elif answer == "8":
-            time_lessons.logs()
+            file_lessons.logs()
         elif answer == "9":
-            time_lessons.add_new_words()
+            file_lessons.add_new_words()
         elif answer == "10":
-            time_lessons.remove_old_words()
+            file_lessons.remove_old_words()
         elif answer == "11":
             break
