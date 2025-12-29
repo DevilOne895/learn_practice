@@ -17,6 +17,13 @@ def header(title):
 
 
 def main():
+    main_map = {
+        "1": info_str,
+        "2": info_list,
+        "3": info_time,
+        "4": info_dict,
+        "5": info_file,
+    }
     while True:
         header("EUGENE_INC • ГЛАВНОЕ МЕНЮ")
 
@@ -34,23 +41,27 @@ def main():
             print("\n⚠ Только цифры\n")
             continue
 
-        if answer == "1":
-            info_str()
-        elif answer == "2":
-            info_list()
-        elif answer == "3":
-            info_time()
-        elif answer == "4":
-            info_dict()
-        elif answer == "5":
-            info_file()
-        elif answer == "6":
+        if answer == "6":
             print("\nПрограмма завершена.\n")
             break
+
+        action = main_map.get(answer)
+
+        if action:
+            action()
+        else:
+            print("\n❌ Нет такого пункта меню\n")
 
 
 
 def info_str():
+    string_map = {
+        "1": string_practice.count_simvol,
+        "2": string_practice.revers_stroki,
+        "3": string_practice.count_letters,
+        "4": string_practice.cansel,
+        "5": string_practice.most_long,
+    }
     while True:
         header("РАБОТА СО СТРОКАМИ")
 
@@ -68,24 +79,29 @@ def info_str():
             print("\n⚠ Только цифры\n")
             continue
 
-        if answer == "1":
-            string_practice.count_simvol()
-        elif answer == "2":
-            string_practice.revers_stroki()
-        elif answer == "3":
-            string_practice.count_letters()
-        elif answer == "4":
-            string_practice.cansel()
-        elif answer == "5":
-            string_practice.most_long()
-        elif answer == "6":
+        if answer == "6":
             break
+
+        action = string_map.get(answer)
+
+        if action:
+            action()
+        else:
+            print("\n❌ Нет такого пункта меню\n")
+
 
 
 
 
 
 def info_list():
+    list_map = {
+        "1": list_practice.del_elem,
+        "2": list_practice.max_min_sum,
+        "3": list_practice.shift,
+        "4": list_practice.even_odd_count,
+        "5": list_practice.temperature,
+    }
     while True:
         header("РАБОТА СО СПИСКАМИ")
 
@@ -103,23 +119,28 @@ def info_list():
             print("\n⚠ Только цифры\n")
             continue
 
-        if answer == "1":
-            list_practice.del_elem()
-        elif answer == "2":
-            list_practice.max_min_sum()
-        elif answer == "3":
-            list_practice.shift()
-        elif answer == "4":
-            list_practice.even_odd_count()
-        elif answer == "5":
-            list_practice.temperature()
-        elif answer == "6":
+        if answer == "6":
             break
+
+        action = list_map.get(answer)
+
+        if action:
+            action()
+        else:
+            print("\n❌ Нет такого пункта меню\n")
 
 
 
 
 def info_time():
+    time_map = {
+        "1": time_lessons.current_time,
+        "2": time_lessons.Time_difference,
+        "3": time_lessons.time_left,
+        "4": time_lessons.next_data,
+        "5": time_lessons.leap_year,
+        "6": time_lessons.conversion,
+    }
     while True:
         header("РАБОТА СО ВРЕМЕНЕМ")
 
@@ -138,27 +159,27 @@ def info_time():
             print("\n⚠ Только цифры\n")
             continue
 
-        if answer == "1":
-            time_lessons.current_time()
-        elif answer == "2":
-            time_lessons.Time_difference()
-        elif answer == "3":
-            time_lessons.time_left()
-        elif answer == "4":
-            time_lessons.next_data()
-        elif answer == "5":
-            time_lessons.leap_year()
-        elif answer == "6":
-            time_lessons.conversion()
-        elif answer == "7":
+        if answer == "7":
             break
+
+        action = time_map.get(answer)
+
+        if action:
+            action()
+        else:
+            print("\n❌ Нет такого пункта меню\n")
 
 
 
 
 def info_dict():
+    dict_map = {
+        "1": dict.count_words,
+        "2": dict.phone_book,
+    }
     while True:
         header("РАБОТА СО СЛОВАРЯМИ")
+
 
         answer = input(
             " 1) Подсчитать количество слов\n"
@@ -171,15 +192,32 @@ def info_dict():
             print("\n⚠ Только цифры\n")
             continue
 
-        if answer == "1":
-            dict.count_words()
-        elif answer == "2":
-            dict.phone_book()
-        elif answer == "3":
+        if answer == "3":
             break
+
+        action = dict_map.get(answer)
+
+        if action:
+            action()
+        else:
+            print("\n❌ Нет такого пункта меню\n")
+
 
 
 def info_file():
+
+    menu_map = {
+        "1": file_lessons.open_file,
+        "2": file_lessons.count_lines,
+        "3": file_lessons.count_words,
+        "4": file_lessons.longest_words,
+        "5": file_lessons.copy_file,
+        "6": file_lessons.print_on_file,
+        "7": file_lessons.add_numbers,
+        "8": file_lessons.logs,
+        "9": file_lessons.add_new_words,
+        "10": file_lessons.remove_old_words,
+    }
     while True:
         print("\n" + "═" * 70)
         print("РАБОТА С ФАЙЛАМИ".center(70))
@@ -204,25 +242,13 @@ def info_file():
             print("\n⚠ Только цифры\n")
             continue
 
-        if answer == "1":
-            file_lessons.open_file()
-        elif answer == "2":
-            file_lessons.count_lines()
-        elif answer == "3":
-            file_lessons.count_words()
-        elif answer == "4":
-            file_lessons.longest_words()
-        elif answer == "5":
-            file_lessons.copy_file()
-        elif answer == "6":
-            file_lessons.print_on_file()
-        elif answer == "7":
-            file_lessons.add_numbers()
-        elif answer == "8":
-            file_lessons.logs()
-        elif answer == "9":
-            file_lessons.add_new_words()
-        elif answer == "10":
-            file_lessons.remove_old_words()
-        elif answer == "11":
+        if answer == "11":
             break
+
+        action = menu_map.get(answer)
+
+        if action:
+            action()
+        else:
+            print("\n❌ Нет такого пункта меню\n")
+
