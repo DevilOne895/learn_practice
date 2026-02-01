@@ -11,11 +11,11 @@ def numbers(n):
     print(n)
 
 
-def sum(n):
+def summa(n):
     if n == 0:
         return 0
     else:
-        return n + sum(n - 1)
+        return n + summa(n - 1)
 
 #print(sum(5))
 
@@ -60,4 +60,56 @@ def degree(n):
         return False
     return degree(n // 2 )
 
-print(degree(5))
+#print(degree(5))
+
+#_______________________THIRD-LEVEL_____________________________________
+
+massive = [12, 33, 45, 12, 22, 43]
+def sum_massive(massive):
+    if massive == []:
+        return 0
+    return massive[0] + sum_massive(massive[1:])
+
+#print(sum_massive(massive))
+
+def max_element(massive):
+    if len(massive) == 1:
+        return massive[0]
+    first = massive[0]
+    maximum = max_element(massive[1:])
+    if massive[0] > maximum:
+        return massive[0]
+    else:
+        return maximum
+
+#print(max_element(massive))
+
+def is_massive_sort(massive):
+    if len(massive) <= 1:
+        return True
+    if massive[0] > massive[1]:
+        return False
+    return is_massive_sort(massive[1:])
+
+
+#print(is_massive_sort(massive))
+
+def count_elements_of_massive(massive):
+    if massive == []:
+        return 0
+    return 1 + count_elements_of_massive(massive[1:])
+
+#print(count_elements_of_massive(massive))
+
+def recursion_search(massive):
+    answer = int(input("Введите число которое надо найти: "))
+    if massive == []:
+        return False
+    elif massive[0] == answer:
+        return massive[0],print("Ваш елемент есть в списке!")
+    elif massive[0] != answer:
+        print("Такого елемента нету в списке!(")
+    else:
+        return recursion_search(massive[1:])
+
+#print(recursion_search(massive))
