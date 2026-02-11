@@ -1,3 +1,4 @@
+#_______________________First-LEVEL_____________________________________
 def countdown(n):
     if n <= 0:
         return
@@ -113,3 +114,81 @@ def recursion_search(massive):
         return recursion_search(massive[1:])
 
 #print(recursion_search(massive))
+
+
+#_______________________Fourth-LEVEL_____________________________________
+task = [1, 2, [], [3, 4], [5]]
+cont = 0
+
+def deep_sum(task):
+    if not isinstance(task, list):
+        return task
+    if task == []:
+        return 0
+    else:
+        return deep_sum(task[0]) + deep_sum(task[1:])
+
+
+
+#print(deep_sum(task))
+
+def rec(lst, count, max_count):
+    input(f"rec({lst},{count},{max_count})")
+    # Базовый случай: пустой список (rec([], Count, MaxCount))
+    if not lst:
+        return count - 1, max_count
+
+    # Разделение на голову (H) и хвост (T)
+    h = lst[0]
+    t = lst[1:]
+
+    # Первый паттерн: голова является списком (when is_list(H))
+    if isinstance(h, list):
+        # Логика case: проверяем, увеличилась ли глубина
+        if count + 1 > max_count:
+            # Новый виток с обновленным максимумом
+            _, max_count1 = rec(h, count + 1, count + 1)
+        else:
+            # Новый виток со старым максимумом
+            _, max_count1 = rec(h, count + 1, max_count)
+
+        # Рекурсия для хвоста с обновленным max_count1
+        return rec(t, count, max_count1)
+
+    # Второй паттерн: голова не список (rec([_H|T]...))
+    else:
+        return rec(t, count, max_count)
+
+
+# Пример использования (обертка для запуска)
+def get_max_depth(lst):
+    # Начальные значения: Count=1, Max=1 (как в комментариях Erlang кода)
+    _, max_depth = rec(lst, 1, 1)
+    return max_depth
+
+
+# Тесты
+data = [2, [4, [5]]]  # Глубина 3
+#print(get_max_depth(data))  # Вывод: 3
+
+
+
+binary_list = [1,4,22,44,54,2,5,6,88,0,23]
+def recurs_binary_search(binary_list, number):
+    if not binary_list:
+        return "Похоже, вашего числа нету в списке!"
+
+    sorted_task = sorted(binary_list)
+    mid = len(sorted_task) // 2
+    mid_value = sorted_task[mid]
+
+    if mid_value == number:
+        return "Ваше число есть в списке!"
+    elif number < mid_value:
+        return recurs_binary_search(sorted_task[:mid], number)
+    else:
+        return recurs_binary_search(sorted_task[mid+1:], number)
+
+
+
+print(recurs_binary_search(binary_list, 45))
